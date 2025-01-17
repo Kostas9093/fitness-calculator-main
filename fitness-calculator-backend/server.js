@@ -20,6 +20,7 @@ const db = mysql.createConnection({
     user: process.env.DB_USER,
     password:  process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
+    port: process.env.DB_PORT || 3306,
 });
 
 const JWT_SECRET = process.env.JWT_SECRET || 'defaultsecret';
@@ -158,7 +159,7 @@ app.post('/fitness-data', authenticateToken, (req, res) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
