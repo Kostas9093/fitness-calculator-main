@@ -159,7 +159,7 @@ app.post('/fitness-data', authenticateToken, (req, res) => {
 });
 
 // Start the server
-app.listen(process.env.PORT || 3000, () => {
+app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
 
