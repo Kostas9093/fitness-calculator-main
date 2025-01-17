@@ -21,6 +21,7 @@ const db = mysql.createConnection({
     password:  process.env.DB_PASSWORD,
     database: process.env.DB_NAME,
     port: process.env.DB_PORT || 3306,
+    connectAttributes: { host: "127.0.0.1" }, // Force IPv4
 });
 
 const JWT_SECRET = process.env.JWT_SECRET || 'defaultsecret';
